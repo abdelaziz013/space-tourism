@@ -1,0 +1,253 @@
+/*
+0-600px: phone;
+
+600-900px: tablet-potarit
+
+900-1200: tablet-landscape
+
+1200-1800 is where our normal style apply
+
+1800px+:big desktop
+*/
+:root {
+  --fs-900: 9rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+}
+@media (max-width: 56.25em) {
+  :root {
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.15rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+  }
+}
+@media (max-width: 37.5em) {
+  :root {
+    --fs-900: 5rem;
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1.125rem;
+    --fs-500: 1rem;
+    --fs-400: 0.938rem;
+    --fs-300: 0.875rem;
+  }
+}
+
+html {
+  background-image: url("../assets/home/background-home-mobile.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.txt, .txt-6, .txt-5, .txt-4, .btn, .txt-3, .txt-2 {
+  font-family: "Bellefair", sans-serif;
+  letter-spacing: 0px;
+}
+
+.txt-1 {
+  font-size: var(--fs-900);
+  line-height: 171%;
+}
+
+.txt-2 {
+  font-size: var(--fs-800);
+  line-height: 114.6%;
+}
+
+.txt-3 {
+  font-size: var(--fs-700);
+}
+
+.txt-4, .btn {
+  font-size: var(--fs-600);
+  letter-spacing: 4px;
+}
+
+.txt-5 {
+  font-size: var(--fs-500);
+  letter-spacing: 4px;
+}
+
+.txt-6 {
+  font-size: var(--fs-500);
+}
+
+.txt-7 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: var(--fs-200);
+  letter-spacing: 2px;
+  line-height: 16.8%;
+}
+
+.text-8 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: var(--fs-300);
+  letter-spacing: 2px;
+}
+
+.txt-9 {
+  font-family: "Barlow", sans-serif;
+  font-size: var(--fs-400);
+  letter-spacing: 0px;
+  line-height: 180%;
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+.flex {
+  display: flex;
+}
+
+.fl-col {
+  flex-direction: column;
+}
+
+.fl-col-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.fl-row {
+  flex-direction: row;
+}
+
+.fl-row-sp-bt {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.btn {
+  height: 272px;
+  width: 272px;
+  border-radius: 50%;
+  text-transform: uppercase;
+  color: #0B0D17;
+  background-color: #ffffff;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: opacity 500ms linear;
+}
+.btn:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  border-radius: 50%;
+  background-color: hsla(0, 0%, 100%, 0.1);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 500ms linear, transform 300ms linear;
+}
+.btn:hover {
+  color: #484A51;
+}
+.btn:hover::after {
+  transform: scale(1.5);
+  opacity: 1;
+}
+@media (max-width: 37.5em) {
+  .btn {
+    font-size: var(--fs-400);
+    height: 144px;
+    width: 144px;
+  }
+}
+
+.home {
+  position: relative;
+  overflow-x: hidden;
+}
+.home .header {
+  padding: 24px;
+}
+.home .header__logo {
+  height: 40px;
+  width: 40px;
+}
+.home .header__logo img {
+  height: 100%;
+  width: 100%;
+}
+.home .header__nav-icon {
+  cursor: pointer;
+}
+.home__content {
+  padding: 24px;
+  text-align: center;
+  color: #D0D6F9;
+  z-index: 1;
+}
+.home__content :nth-child(2) {
+  color: #ffffff;
+  padding-block: 24px;
+}
+.home__button {
+  margin-block: 95px;
+}
+.home .mobile__nav {
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 20%;
+  background-color: hsla(231, 77%, 90%, 0.2);
+  transform: translateX(100%);
+  backdrop-filter: blur(1.4rem);
+  -webkit-backdrop-filter: blur(1.4rem);
+  color: #ffffff;
+  z-index: 2;
+  transition: transform 1s ease-in-out;
+}
+.home .mobile__nav--close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 32px;
+  right: 24px;
+}
+.home .mobile__nav ul {
+  position: absolute;
+  top: 133px;
+  left: 32px;
+}
+.home .mobile__nav ul > li > a {
+  color: #ffffff;
+  list-style: none;
+}
+.home .hide {
+  transform: translateX(100%);
+}
+.home .show {
+  transform: translateX(0);
+}
