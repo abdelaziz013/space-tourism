@@ -5,13 +5,13 @@
 .txt-1{
 
     font-size: $fs-900;
-    line-height: 171%;
+    // line-height: 171%;
 
 }
 .txt-2{
     @extend .txt;
    font-size: $fs-800;
-   line-height: 114.6%;
+//    line-height: 114.6%;
 }
 .txt-3{
     @extend .txt;
@@ -40,10 +40,10 @@
     font-family: $ff-barlow-condensed;
     font-size: $fs-200;
     letter-spacing: 2px;
-    line-height:16.8% ;
+    // line-height:16.8% ;
 
 }
-.text-8{
+.txt-8{
     font-family: $ff-barlow-condensed;
     font-size: $fs-300;
     letter-spacing: 2px;

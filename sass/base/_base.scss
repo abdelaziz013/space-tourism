@@ -3,6 +3,9 @@ html {
   background-image: url('../assets/home/background-home-mobile.jpg');
   background-size: cover;
   background-position: center;
+  @include breakpoint-up(large) {
+    background-image: url('../assets/home/background-home-desktop.jpg');
+  }
 
 
 }

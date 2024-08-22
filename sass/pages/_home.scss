@@ -1,93 +1,284 @@
 .home {
-//   height: 812px;
-  position: relative;
-  overflow-x: hidden;
-  .header {
-    padding: $sp-300;
-    &__logo {
-      height: 40px;
-      width: 40px;
-      img {
+    //   height: 812px;
+    position: relative;
+    overflow-x: hidden;
+
+    .header {
+        padding: $sp-300;
+
+        @include breakpoint-up(medium) {
+            padding: 0;
+            height: 6rem;
+            position: relative;
+        }
+
+        @include breakpoint-up(large) {
+            padding-top: $sp-500;
+        }
+
+        &__logo {
+            flex: 1;
+
+            @include breakpoint-up(medium) {
+                padding-left: $sp-300;
+            }
+
+            @include breakpoint-up(large) {
+                padding-left: $sp-500;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    height: 1px;
+                    width: 27.5rem;
+                    background-color: #3A3D44;
+                    position: absolute;
+                    top: 50%;
+                    left: 7rem;
+                    z-index: 19;
+                    // transform: translateY(-50%);
+                }
+            }
+
+            >div {
+                height:$sp-500;
+                width:$sp-500;
+
+                @include breakpoint-up(medium) {
+                    height: 3rem;
+                    width: 3rem;
+                }
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+
+        // hamburger icon
+        &__nav-icon {
+            cursor: pointer;
+
+            @include breakpoint-up(medium) {
+                display: none;
+            }
+        }
+    }
+
+    .nav {
         height: 100%;
-        width: 100%;
-      }
-
-
-    }
-    &__nav-icon {
-      cursor: pointer;
-    }
-  }
-  &__content {
-    padding: $sp-300;
-    text-align: center;
-    color: $blue300;
-    // filter:blur(5px);
-    z-index: 1;
-    & :nth-child(2) {
-      color: $white;
-      padding-block: $sp-300;
-    }
-  }
-  &__button {
-    // height: 23.7rem;
-    margin-block: 95px;
-  }
-  .mobile__nav {
-    height: 100%;
-    position: fixed;
-    right: 0;
-    top: 0;
-    left:20%;
-    // width: 0px;
-    background-color: hsla(231 77% 90% /0.2);
-    // background-color: hsla(0 0% 100% /0.8);
-    transform: translateX(100%);
-
-    backdrop-filter: blur( 1.4rem );
-    -webkit-backdrop-filter: blur( 1.4rem );
-
-    color: $white;
-    z-index: 2;
-    // transition-property: all;
-    // transition-duration: 2s;
-    // transition-behavior: allow-discrete;
-    transition: transform 1s ease-in-out;
-    &--close-btn {
-      // position: fixed;
-    //   margin-left: calc(254px - (42px));
-    //   margin-top: 32px;
-      cursor: pointer;
-    //   z-index: 1000;
-    position: absolute;
-    top:32px;
-    right: 24px;
-    }
-    & ul {
-      position: absolute;
-      top: 133px;
-      left: 32px;
-      & > li > a {
+        position: fixed;
+        right: 0;
+        top: 0;
+        left: 20%;
+        background-color: hsla(231 77% 90% /0.15);
+        transform: translateX(100%);
+        backdrop-filter: blur(1.4rem);
+        -webkit-backdrop-filter: blur(1.4rem);
         color: $white;
-        //   opacity: 1;
-        list-style: none;
-      }
-    }
-    // backdrop-filter: blur(250px);
-  }
-  .hide {
-    // width: 0;
-    transform: translateX(100%);
-    // transition-property: all;
-    // transition-duration: 2s;
-    // transition-behavior: allow-discrete;
-  }
-  .show {
-    // width: 254px;
-    transform: translateX(0);
+        z-index: 2;
+        transition: transform 1s ease-in-out;
 
-    // transition-property: all;
-    // transition-duration: 2s;
-    // transition-behavior: allow-discrete;
-  }
+        @include breakpoint-up(medium) {
+            position: relative;
+            inset: 0;
+            transform: translateX(0);
+            flex: 6;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        @include breakpoint-up(large) {
+            flex: 1.5;
+        }
+
+        & ul {
+            position: absolute;
+            top: 8.313rem;
+            left: 2rem;
+            width: calc(100% - 2rem);
+
+            @include breakpoint-up(medium) {
+                position: relative;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 3rem;
+                width: 100%;
+                // height: 48px;
+                padding-inline: $sp-500;
+            }
+
+            >*:where(:not(:last-child)) {
+                margin-bottom: $sp-400;
+
+                @include breakpoint-up(medium) {
+                    margin-bottom: 0;
+                }
+            }
+
+            & li {
+                position: relative;
+
+                // height: 100%;
+                & :after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    height: 105%;
+                    width: 2px;
+                    background-color: $white;
+                    opacity: 0;
+                    transition: opacity 500ms ease-in-out;
+
+                    @include breakpoint-up(medium) {
+                        height: 2px;
+                        width: 100%;
+                        top: calc(100% + 2.188rem);
+                        // position: relative;
+                        // display: block;
+                        // position: absolute;
+                        // bottom: 0;
+                    }
+                }
+
+                &.active :after {
+                    opacity: 1;
+                }
+
+                & :hover::after {
+                    opacity: 0.6;
+                }
+
+                &>a {
+                    @extend .txt-8;
+                    color: $white;
+                    list-style: none;
+                    text-transform: uppercase;
+
+                    >span {
+                        font-weight: bold;
+                        margin-right: 0.75rem;
+                    }
+                }
+            }
+        }
+
+        &--close-btn {
+            cursor: pointer;
+            position: absolute;
+            top: $sp-400;
+            right: $sp-300;
+
+            @include breakpoint-up(medium) {
+                display: none;
+            }
+        }
+    }
+
+    &__content {
+        padding: $sp-300;
+        text-align: center;
+        color: $blue300;
+
+        z-index: 1;
+
+        @include breakpoint-up(medium) {
+            padding: 8rem $sp-400;
+
+
+
+
+
+        }
+
+        @include breakpoint-up(large) {
+            padding: 7.5rem 5.625rem;
+            text-align: start;
+        }
+
+        &>div {
+            color: $white;
+            @include breakpoint-up(large) {
+                height: 39.5rem;
+                align-self: flex-end;
+                justify-self: end;
+                // height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: end;
+                flex: 1;
+
+            }
+
+            &:nth-child(1) {
+
+                // padding-inline: $sp-300;
+
+                @include breakpoint-up(medium) {
+                    padding-inline:5.5rem;
+
+
+                }
+
+                @include breakpoint-up(large) {
+                    padding-inline: 0;
+                    align-items: start;
+                }
+
+                & p:nth-child(1) {
+                    @extend .txt-6;
+
+                    @include breakpoint-up(large) {
+                        font-size: $fs-500;
+                    }
+                }
+
+                >*:where(:not(:last-child)) {
+                    margin-bottom: $sp-400;
+                }
+            }
+        }
+    }
+
+    &__button {
+        // height: 23.7rem;
+        margin-block: 5.938rem;
+
+        @include breakpoint-up(medium) {
+
+            .btn {
+                position: relative;
+                top: 7.5rem;
+            }
+
+
+        }
+
+        @include breakpoint-up(large) {
+            margin: 0;
+
+            .btn {
+                // position: static;
+                top: 0;
+                margin-bottom:1.875rem;
+            }
+        }
+    }
+
+    // hid sidebar
+    .hide {
+        transform: translateX(100%);
+    }
+
+    // show sidebar
+    .show {
+        transform: translateX(0);
+    }
 }
