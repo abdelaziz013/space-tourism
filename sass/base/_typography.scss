@@ -63,3 +63,15 @@
 .upper-case{
     text-transform: uppercase;
 }
+
+.title{
+    @extend .txt-6;
+    @extend .upper-case;
+    margin-bottom: $sp-400;
+    span {
+        // opacity: 0.3;
+        opacity: 0.5;
+        margin-right: $sp-100;
+        letter-spacing: 2px;
+    }
+}

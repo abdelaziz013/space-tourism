@@ -1,0 +1,113 @@
+.dest {
+  min-height: 100vh;
+  background-image: url('../assets/destination/background-destination-mobile.jpg');
+  background-size: cover;
+  background-position: center;
+  @include breakpoint-up(large) {
+    background-image: url('../assets/destination/background-destination-mobile.jpg');
+  }
+  &__content {
+    padding: $sp-400;
+    text-align: center;
+    color: $white;
+    @include breakpoint-up(medium) {
+      padding: $sp-500;
+      .title{
+        text-align: start;
+      }
+    }
+    &--wrapper{
+      // border:1px solid green;
+      @include breakpoint-up(medium) {
+        padding: 11px 87px;
+      }
+    }
+    &__img--moon {
+      padding-block:26px ;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: $sp-400;
+      div {
+        height: 150px;
+      width: 150px;
+      @include breakpoint-up(medium) {
+        height: 300px;
+        width: 300px;
+    }
+      }
+      // padding: 26px 88px;
+    }
+    &__description {
+      padding-block: $sp-400;
+      border-bottom: 2px solid #3A3D44;
+      & :first-child{
+        padding-bottom: $sp-300;
+        @include breakpoint-up(medium) {
+        font-size: 80px;
+        }
+      }
+      &--dest-time{
+        display: flex;
+        flex-direction: column;
+        @include breakpoint-up(medium) {
+          flex-direction: row;
+          // background-color: green;
+          // justify-content: space-between;
+          // align-content: flex-end;
+        }
+      }
+      &--distance {
+        margin-top: $sp-400;
+        // text-align: center;
+        flex:1;
+        // border: 2px solid red;
+        & :first-child {
+          margin-bottom: 12px;
+          color: $blue300;
+        }
+      }
+      &--time {
+        margin-top: $sp-400;
+        flex:1;
+        & :first-child {
+          margin-bottom: 12px;
+          color: $blue300;
+        }
+      }
+    }
+  }
+  // & div:nth-child(2){
+  //   @include breakpoint-up(medium) {
+  //     border: 3px solid red;
+  //   }
+  // }
+  &_nav {
+    @extend .txt-8;
+    @extend .upper-case;
+    display: flex;
+    padding-inline: 40px;
+    justify-content: space-between;
+    @include breakpoint-up(medium) {
+      padding-inline: 127px;
+    }
+    & li {
+      position: relative;
+      padding-bottom: 15px;
+      &:after {
+        content: "";
+        background-color: $white;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        display: block;
+        opacity: 0;
+        transition: opacity 1500ms ease-in-out;
+      }
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+}

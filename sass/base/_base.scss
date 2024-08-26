@@ -1,11 +1,5 @@
 html {
   // height: 100vh;
-  background-image: url('../assets/home/background-home-mobile.jpg');
-  background-size: cover;
-  background-position: center;
-  @include breakpoint-up(large) {
-    background-image: url('../assets/home/background-home-desktop.jpg');
-  }
 
 
 }
@@ -25,9 +19,17 @@ a,
 a:visited,
 a:hover {
   text-decoration: none;
+  color:$white;
 
 }
 
 li{
   list-style: none;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+
+
 }
