@@ -3,10 +3,7 @@
     letter-spacing: 0px;
 }
 .txt-1{
-
     font-size: $fs-900;
-    // line-height: 171%;
-
 }
 .txt-2{
     @extend .txt;
@@ -17,8 +14,6 @@
     @extend .txt;
    font-size: $fs-700;
 }
-
-
 .txt-4{
     @extend .txt;
    font-size: $fs-600;
@@ -32,42 +27,32 @@
 .txt-6{
     @extend .txt;
    font-size: $fs-500;
-
 }
-
-
 .txt-7{
     font-family: $ff-barlow-condensed;
     font-size: $fs-200;
     letter-spacing: 2px;
     // line-height:16.8% ;
-
 }
 .txt-8{
     font-family: $ff-barlow-condensed;
     font-size: $fs-300;
     letter-spacing: 2px;
-
 }
 .txt-9{
     font-family: $ff-barlow;
     font-size: $fs-400;
     letter-spacing: 0px;
     line-height: 180%;
-
-
 }
-
-
-
 .upper-case{
     text-transform: uppercase;
 }
-
 .title{
     @extend .txt-6;
     @extend .upper-case;
     margin-bottom: $sp-400;
+    color:$white;
     span {
         // opacity: 0.3;
         opacity: 0.5;
