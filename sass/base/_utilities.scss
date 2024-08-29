@@ -18,6 +18,10 @@
     justify-content: space-between;
 }
 
+.fl-row-center{
+    justify-content: center;
+}
+
 .align-items-center{
     align-items: center;
 }
@@ -29,4 +33,11 @@
     @include breakpoint-up(large) {
         flex-direction: row;
     }
+}
+
+.w-100{
+    width: 100%;
+}
+.text-center{
+    text-align: center;
 }
