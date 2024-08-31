@@ -410,6 +410,44 @@ img {
   background-color: #86878E;
 }
 
+.circle__nav ul {
+  display: flex;
+  gap: 1rem;
+}
+@media (min-width: 75em) {
+  .circle__nav ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+.circle__nav ul li {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 500ms ease-in-out;
+  cursor: pointer;
+  border: 1px solid #4F4D58;
+}
+.circle__nav ul li:hover {
+  border-color: #ffffff;
+}
+@media (min-width: 75em) {
+  .circle__nav ul li {
+    height: 80px;
+    width: 80px;
+    font-size: var(--fs-600);
+  }
+}
+.circle__nav--active {
+  background-color: #ffffff !important;
+}
+.circle__nav--active a {
+  color: #000000 !important;
+}
+
 .home {
   position: relative;
   overflow-x: hidden;
@@ -646,8 +684,6 @@ img {
   background-image: url("../assets/crew/background-crew-mobile.jpg");
   background-size: cover;
   background-position: center;
-  position: relative;
-  z-index: 1;
 }
 @media (min-width: 48em) {
   .crew {
@@ -738,4 +774,116 @@ img {
     height: 676px;
     width: 539px;
   }
+}
+
+.technology {
+  min-height: 100vh;
+  background-image: url("../assets/technology/background-technology-mobile.jpg");
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 48em) {
+  .technology {
+    background-image: url("../assets/technology/background-technology-tablet.jpg");
+  }
+}
+@media (min-width: 75em) {
+  .technology {
+    background-image: url("../assets/technology/background-technology-desktop.jpg");
+  }
+}
+.technology__content {
+  color: #ffffff;
+}
+@media (min-width: 75em) {
+  .technology__content {
+    padding-left: 4.0625rem;
+    padding-block: 3rem;
+  }
+  .technology__content .container {
+    flex-direction: row-reverse;
+    align-items: center;
+    border: 3px solid green;
+  }
+}
+.technology__content__title {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+@media (min-width: 48em) {
+  .technology__content__title {
+    padding-top: 2.5rem;
+    padding-inline: 2.5rem;
+    text-align: start;
+  }
+}
+@media (min-width: 75em) {
+  .technology__content__title {
+    padding: 0;
+  }
+}
+.technology__content__img {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  height: 258px;
+  width: 100%;
+  background: url("../assets/technology/image-launch-vehicle-portrait.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 48em) {
+  .technology__content__img {
+    height: 357px;
+  }
+}
+@media (min-width: 75em) {
+  .technology__content__img {
+    height: 600px;
+    width: 608px;
+    flex: 1;
+  }
+}
+.technology__content__desc {
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+@media (min-width: 48em) {
+  .technology__content__desc {
+    padding: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+@media (min-width: 75em) {
+  .technology__content__desc {
+    flex: 1.2;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+    gap: 4rem;
+    text-align: start;
+    height: 304px;
+  }
+}
+@media (min-width: 75em) {
+  .technology__content__desc .circle__nav {
+    order: 2;
+  }
+}
+.technology__content__desc p:nth-child(1) {
+  opacity: 0.5;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 75em) {
+  .technology__content__desc p:nth-child(1) {
+    margin-top: unset;
+  }
+}
+.technology__content__desc p:nth-child(2) {
+  margin-bottom: 1rem;
+}
+.technology__content__desc p:nth-child(3) {
+  color: #D0D6F9;
 }
