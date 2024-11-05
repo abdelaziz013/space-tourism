@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap');
+
+
+
+html {
+  // height: 100vh;
+}
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  // color: $white;
+}
+li {
+  list-style: none;
+}
+img {
+  height: 100%;
+  width: 100%;
+}

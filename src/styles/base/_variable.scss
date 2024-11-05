@@ -1,0 +1,72 @@
+:root {
+    // 144px
+    --fs-900: 9rem;
+    // 100px
+    --fs-800: 6.25rem;
+    // 56px
+    --fs-700: 3.5rem;
+    // 32px
+    --fs-600: 2rem;
+    // 28px
+    --fs-500: 1.75rem;
+    // 18px
+    --fs-400: 1.125rem;
+    // 16px
+    --fs-300: 1rem;
+    // 14px
+    $fs-200: 0.875rem;
+    @include breakpoint-down(tap-port) {
+        --fs-800: 5rem;
+        // 40px
+        --fs-700: 2.5rem;
+        // 24px
+        --fs-600: 1.15rem;
+        // 20px
+        --fs-500: 1.25rem;
+        // 16px
+        --fs-400: 1rem;
+    }
+    @include breakpoint-down(phone) {
+        // 80px
+        --fs-900: 4.5rem;
+        // 56px
+        --fs-800: 3.5rem;
+        // 24px
+        --fs-700: 1.5rem;
+        // 18px
+        --fs-600: 1.125rem;
+        // 16px
+        --fs-500: 1rem;
+        // 15px
+        --fs-400: 0.938rem;
+        // 14px
+        --fs-300: 0.875rem;
+    }
+    ;
+}
+// COLORS
+$blue900:#0B0D17;
+$blue300:#D0D6F9;
+$white:#ffffff;
+// FONT family
+$ff-bellefair:'Bellefair',sans-serif;
+$ff-barlow :'Barlow',sans-serif;
+$ff-barlow-condensed :'Barlow Condensed',sans-serif;
+// FONT SIZE
+// 14px
+$fs-200:var(--fs-200);
+$fs-300:var(--fs-300);
+$fs-400:var(--fs-400);
+$fs-500:var(--fs-500);
+$fs-600:var(--fs-600);
+$fs-700:var(--fs-700);
+$fs-800:var(--fs-800);
+$fs-900:var(--fs-900);
+// spacing
+$sp-100:0.5rem;
+// 24px
+$sp-300:1.5rem;
+// 32px
+$sp-400:2rem;
+// 40px
+$sp-500:2.5rem;

@@ -1,0 +1,77 @@
+.header {
+  padding: $sp-300;
+  display: flex;
+  justify-content: space-between;
+  // width: 100vw;
+  position: relative;
+  &__logo {
+    height: 40px;
+    width: 40px;
+    @include breakpoint-up(medium) {
+      height: 48px;
+      width: 48px;
+    }
+  }
+  &__menu {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    @include breakpoint-up(medium) {
+      display: none;
+    }
+  }
+  &__nav {
+    height: 100%;
+    background-color: hsla(231 77% 90% /0.15);
+    backdrop-filter: blur(1.4rem);
+    -webkit-backdrop-filter: blur(1.4rem);
+    z-index: 2;
+    color: $white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 20%;
+    transform: translateX(100%);
+    transition: transform 1s ease-in-out;
+    @include breakpoint-up(medium) {
+      position: relative;
+      inset: 0;
+      transform: translateX(0);
+    }
+    &__close-btn {
+      cursor: pointer;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: $sp-400;
+      right: $sp-300;
+      @include breakpoint-up(medium) {
+        display: none;
+      }
+    }
+    ul {
+      position: absolute;
+      top: 8.313rem;
+      left: 2rem;
+      width: calc(100% - 2rem);
+      @include breakpoint-up(medium) {
+        position: relative;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 3rem;
+        width: 100%;
+        padding-inline: $sp-500;
+      }
+    }
+  }
+}
+// hid sidebar
+.hide {
+  transform: translateX(100%);
+}
+// show sidebar
+.show {
+  transform: translateX(0);
+}
