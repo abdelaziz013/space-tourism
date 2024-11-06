@@ -12,6 +12,7 @@ const Navbar = () => {
       {/* logo */}
       <div className="header__logo">
         <div>
+
           <img src={logo} alt="logo" />
         </div>
       </div>
@@ -30,7 +31,7 @@ const Navbar = () => {
             <li key={i}>
               <NavLink
                 to={e.to}
-                
+
                 className={({ isActive }) => "header__nav__list--item header__nav__list--item-navLink" + (isActive ? " header__nav__list--item-active" : "")}
               >
                 <span>0{i}</span>

@@ -1,0 +1,43 @@
+.flex{
+    display: flex;
+}
+
+.fl-col{
+    flex-direction: column;
+}
+
+.fl-col-center{
+    align-items: center;
+    justify-content: center;
+}
+
+.fl-row{
+    flex-direction: row;
+}
+.fl-row-sp-bt{
+    justify-content: space-between;
+}
+
+.fl-row-center{
+    justify-content: center;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    @include breakpoint-up(large) {
+        flex-direction: row;
+    }
+}
+
+.w-100{
+    width: 100%;
+}
+.text-center{
+    text-align: center;
+}
