@@ -51,3 +51,6 @@ export const DESTDATA = [
     travel: "7 years",
   },
 ];
+
+
+
