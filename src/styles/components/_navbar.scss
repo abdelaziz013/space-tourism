@@ -2,20 +2,57 @@
   padding: $sp-300;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   // width: 100vw;
-  position: relative;
+  // position: relative;
+  @include breakpoint-up(medium) {
+    padding: 0;
+    height: 6rem;
+    position: relative;
+}
+  @include breakpoint-up(large) {
+    padding-top: $sp-500;
+}
   &__logo {
-    height: 40px;
-    width: 40px;
+    flex:1;
+
     @include breakpoint-up(medium) {
-      height: 48px;
-      width: 48px;
+      // height: 48px;
+      // width: 48px;
+      padding-left: $sp-300;
     }
+    @include breakpoint-up(large) {
+
+      padding-left: $sp-500;
+      position: relative;
+      &:after {
+          content: '';
+          height: 1px;
+          width: 27.5rem;
+          background-color: #3A3D44;
+          position: absolute;
+          top: 50%;
+          left: 7rem;
+          z-index: 19;
+          // transform: translateY(-50%);
+      }
   }
+
+  > div {
+   height: 2.5rem;
+    width: 2.5rem;
+    @include breakpoint-up(medium) {
+      height: 3rem;
+      width: 3rem;
+  }
+
+  }
+  }
+
   &__menu {
     cursor: pointer;
-    width: 24px;
-    height: 24px;
+    // width: 24px;
+    // height: 24px;
     @include breakpoint-up(medium) {
       display: none;
     }
@@ -37,12 +74,20 @@
       position: relative;
       inset: 0;
       transform: translateX(0);
+      flex: 6;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      height: 6rem;
+
     }
+    @include breakpoint-up(large) {
+      flex: 1.5;
+  }
     &__close-btn {
       cursor: pointer;
       position: absolute;
-      width: 24px;
-      height: 24px;
+
       top: $sp-400;
       right: $sp-300;
       @include breakpoint-up(medium) {
@@ -63,7 +108,64 @@
         gap: 3rem;
         width: 100%;
         padding-inline: $sp-500;
+
       }
+      >*:where(:not(:last-child)) {
+        margin-bottom: $sp-400;
+        @include breakpoint-up(medium) {
+            margin-bottom: 0;
+        }
+    }
+    }
+
+     &__list--item {
+        position: relative;
+        cursor: pointer;
+        text-transform: uppercase;
+        color:$white;
+        @extend .txt-8;
+        span {
+          margin-right:12px;
+        }
+
+        &-navLink{
+          color:$white;
+          display: flex;
+
+        }
+
+
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 105%;
+            width: 4px;
+            background-color: $white;
+            opacity: 0;
+            transition: opacity 500ms ease-in-out;
+            @include breakpoint-up(medium) {
+                height: 2px;
+                width: 100%;
+                top: calc(100% + 2.188rem);
+
+            }
+        }
+        &-active {
+            &:after {
+              opacity: 1;
+
+            // opacity: 0;
+            // transition: opacity 500ms ease-in-out;
+            }
+        }
+        &:hover::after {
+            opacity: 0.6;
+        }
+
     }
   }
 }
@@ -75,3 +177,4 @@
 .show {
   transform: translateX(0);
 }
+

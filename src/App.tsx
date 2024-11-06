@@ -1,15 +1,17 @@
 // import './App.css'
 
+import { RouterProvider } from "react-router-dom";
 import { UIProvider } from "./components/UIManager";
-import Home from "./pages/Home";
+
 import "./styles/main.scss";
+import Router from "./router";
 
 function App() {
   return (
     <>
 
 <UIProvider>
-<Home />
+<RouterProvider router={Router} />
 </UIProvider>
 
 
