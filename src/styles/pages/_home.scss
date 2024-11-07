@@ -1,8 +1,4 @@
 .home {
-  //   height: 812px;
- 
-
-
   &__content {
       padding: $sp-300;
       text-align: center;
@@ -21,7 +17,6 @@
               height: 39.5rem;
               align-self: flex-end;
               justify-self: end;
-              // height: 100%;
               display: flex;
               flex-direction: column;
               justify-content: flex-end;
@@ -29,7 +24,6 @@
               flex: 1;
           }
           &:nth-child(1) {
-              // padding-inline: $sp-300;
               @include breakpoint-up(medium) {
                   padding-inline: 5.5rem;
               }
@@ -50,7 +44,6 @@
       }
   }
   &__button {
-      // height: 23.7rem;
       margin-block: 5.938rem;
       @include breakpoint-up(medium) {
           .btn {
@@ -61,11 +54,9 @@
       @include breakpoint-up(large) {
           margin: 0;
           .btn {
-              // position: static;
               top: 0;
               margin-bottom: 1.875rem;
           }
       }
   }
-
 }

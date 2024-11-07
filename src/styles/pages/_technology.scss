@@ -1,0 +1,125 @@
+.technology {
+  
+    @include breakpoint-up(medium) {
+        background-image: url('../assets/technology/background-technology-tablet.jpg');
+    }
+    @include breakpoint-up(large) {
+        background-image: url('../assets/technology/background-technology-desktop.jpg');
+    }
+    &__content {
+        color: $white;
+        // padding: $sp-300;
+        @include breakpoint-up(large) {
+            padding-left: toRem(65);
+            padding-block: toRem(48);
+            .container {
+                flex-direction: row-reverse;
+                align-items: center;
+                // border:3px solid green;
+            }
+        }
+        &__title {
+            text-align: center;
+            padding-top: $sp-300;
+            @include breakpoint-up(medium) {
+                padding-top: $sp-500;
+                padding-inline: $sp-500;
+                text-align: start;
+            }
+            @include breakpoint-up(large) {
+                padding: 0;
+            }
+        }
+        &__img {
+            margin-top: toRem(64);
+            margin-bottom: toRem(32);
+            height: 258px;
+            width: 100%;
+            // background: url("../assets/technology/image-launch-vehicle-portrait.jpg");
+            // background-position: center;
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            @include breakpoint-up(medium) {
+                height: 357px;
+            }
+            @include breakpoint-up(large) {
+                height: 600px;
+                width: 608px;
+                flex: 1;
+            }
+        }
+        &__desc {
+            padding: $sp-300;
+            padding-bottom: toRem(48);
+            text-align: center;
+            @include breakpoint-up(medium) {
+                padding: $sp-500;
+                padding-bottom: $sp-500;
+                // border:1px solid red;
+            }
+            @include breakpoint-up(large) {
+                flex: 1.2;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: stretch;
+                gap: toRem(64);
+                text-align: start;
+                height: 304px;
+            }
+            .circle__nav {
+                @include breakpoint-up(large) {
+                    order: 2;
+                }
+            }
+            & p:nth-child(1) {
+                opacity: 0.5;
+                margin-top: $sp-500;
+                margin-bottom: 1rem;
+                @include breakpoint-up(large) {
+                    margin-top: unset;
+                }
+            }
+            & p:nth-child(2) {
+                margin-bottom: 1rem;
+            }
+            & p:nth-child(3) {
+                color: $blue300;
+                //   background-color: red;
+            }
+        }
+    }
+}
+.circle__nav {
+    ul {
+        display: flex;
+        gap: 1rem;
+        @include breakpoint-up(large) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        li {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 500ms ease-in-out;
+            cursor: pointer;
+            border: 1px solid #4F4D58;
+            &:hover {
+                border-color: $white;
+            }
+            @include breakpoint-up(large) {
+                height: 70px;
+                width: 70px;
+                font-size: $fs-600;
+                padding: 20px;
+            }
+        }
+    }
+    &--active {
+        background-color: $white !important;
+        color: #000000 !important;
+    }
+}

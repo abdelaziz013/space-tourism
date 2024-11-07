@@ -1,0 +1,89 @@
+.crew {
+    &__content {
+      color: $white;
+      padding: $sp-300;
+      @include breakpoint-up(medium) {
+        padding: $sp-500;
+      }
+      @include breakpoint-up(large) {
+        padding: toRem(48) toRem(70);
+      }
+      &__title {
+        text-align: center;
+        @include breakpoint-up(medium) {
+          font-size: $fs-500;
+          text-align: start;
+        }
+      }
+      .container {
+        gap: toRem(10);
+      }
+      &__desc {
+        text-align: center;
+        margin-top: toRem(50);
+        position: relative;
+        @include breakpoint-up(medium) {
+          padding-inline: toRem(95);
+        }
+        @include breakpoint-up(large) {
+          padding-inline: 0;
+          // flex:2;
+          text-align: start;
+          margin-top: toRem(197);
+          // min-width: 539px;
+        }
+        & p:nth-child(1) {
+          opacity: 0.5;
+          margin-bottom: toRem(8);
+        }
+        & p:nth-child(2) {
+          margin-bottom: $sp-300;
+        }
+        & p:nth-child(3) {
+          color: $blue300;
+          margin-bottom: toRem(48);
+        }
+        .nav__container {
+          @include breakpoint-up(large) {
+            justify-content: unset;
+            position: absolute;
+            bottom: toRem(48);
+          }
+        }
+      }
+      &__img {
+        margin-top: toRem(32);
+        &--container {
+          height: 340px;
+          width: 271px;
+          @include breakpoint-up(medium) {
+            height: 560px;
+            width: 446px;
+          }
+          @include breakpoint-up(large) {
+            height: 676px;
+            width: 539px;
+          }
+        }
+      }
+    }
+  }
+  .dotted-nav {
+    display: flex;
+    gap: 1rem;
+  }
+  .dotted-nav--active {
+    background-color: #ffffff !important;
+  }
+  .dotted-nav li {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: block;
+    background-color: #373944;
+    transition: background-color 500ms ease-in-out;
+    cursor: pointer;
+  }
+  .dotted-nav li:hover {
+    background-color: #86878E;
+  }

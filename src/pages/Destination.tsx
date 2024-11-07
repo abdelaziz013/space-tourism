@@ -3,7 +3,7 @@ import { getImageUrl } from '../utils/function';
 import useGetData from '../utils/hooks/getData';
 import { DestData } from '../interfaces';
 const Destination = () => {
-  const {getItemData,itemData}=useGetData<DestData>(0,DESTDATA)
+  const {getItemData,itemData}=useGetData<DestData>(DESTDATA)
   return (
     <div className="dest__content">
       <p className="title"><span>01</span>Pick your destination</p>
@@ -41,4 +41,4 @@ const Destination = () => {
     </div>
   );
 }
-export default Destination
+export default Destination;

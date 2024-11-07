@@ -1,9 +1,6 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-// import Navbar from "../components/Navbar";
 const Home = () => {
   return (
-
       <div className="container home__content">
         <div>
           <p className="upper-case">
@@ -18,14 +15,10 @@ const Home = () => {
             because we’ll give you a truly out of this world experience!
           </p>
         </div>
-
         <div className="home__button flex flx-col fl-col-center">
           <NavLink to="destination" className="btn">explore</NavLink>
-
-          {/* <a className="btn" href="destination-moon.html">explore</a> */}
         </div>
       </div>
-   
   );
 };
 export default Home;
