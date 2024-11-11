@@ -6,13 +6,12 @@ import { useUI } from "./UIManager";
 import { NavLink } from "react-router-dom";
 import { NavData } from "../data"
 const Navbar = () => {
-  const { toggleSidebar, isSidebarOpen } = useUI()
+  const { toggleSidebar, isSidebarOpen,closeSideBar } = useUI()
   return (
     <header className="header">
       {/* logo */}
       <div className="header__logo">
         <div>
-
           <img src={logo} alt="logo" />
         </div>
       </div>
@@ -21,17 +20,16 @@ const Navbar = () => {
         <img src={menu} alt="menu-btn" />
       </div>
       {/* nav */}
-      <nav className={`header__nav ${isSidebarOpen && 'show'}`}>
+      <nav  className={`header__nav ${isSidebarOpen && 'show'}`}>
         {/* side bar close btn */}
         <div className="header__nav__close-btn" onClick={toggleSidebar}>
           <img src={close} alt="close-btn" />
         </div>
         <ul>
           {NavData.map((e, i) =>
-            <li key={i}>
+            <li key={i} onClick={closeSideBar}>
               <NavLink
                 to={e.to}
-
                 className={({ isActive }) => "header__nav__list--item header__nav__list--item-navLink" + (isActive ? " header__nav__list--item-active" : "")}
               >
                 <span>0{i}</span>
@@ -39,9 +37,6 @@ const Navbar = () => {
               </NavLink>
             </li>
           )}
-
-
-
         </ul>
       </nav>
     </header>
